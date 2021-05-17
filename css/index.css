@@ -98,6 +98,8 @@ body {
   margin: 0 auto;
   width: 70%;
   display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .subscribe__email {
@@ -126,4 +128,15 @@ body {
 .button:hover {
   background-color: var(--desaturated-red-active);
   box-shadow: 1px 5px 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+/*
+ * Errors
+ */
+
+.errors {
+  margin: 5px auto;
+  color: var(--desaturated-red);
+  width: 70%;
+  font-size: 1rem;
 }
