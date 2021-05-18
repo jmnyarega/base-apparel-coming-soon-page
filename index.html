@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
     <link
       rel="icon"
       type="image/png"
@@ -21,35 +19,43 @@
   </head>
   <body>
     <main>
-      <div class="logo">
-        <img src="images/logo.svg" alt="logo" />
-      </div>
-      <div class="hero">
+      <div class="top-section">
         <div class="hero__image"></div>
-        <div class="hero__header">
-          <span> We're </span>
-          <span>coming soon </span>
-        </div>
-        <div class="hero__text">
-          Hello fellow shoppers! We're currently building our new fashion store.
-          Add your email below to stay up-to-date with announcements and our
-          launch deals.
-        </div>
       </div>
-      <div class="subscribe">
-        <input
-          placeholder="Email Address"
-          type="email"
-          name="email"
-          class="subscribe__email"
-          required
-        />
-        <img src="images/icon-error.svg" alt="error" class="error" />
-        <a href="" class="subscribe__button button">
-          <img src="images/icon-arrow.svg" alt="arrow" />
-        </a>
+      <div>
+        <div class="hero">
+          <div class="logo">
+            <img src="images/logo.svg" alt="logo" />
+          </div>
+          <div class="hero__header">
+            <span> We're </span>
+            <span>coming soon </span>
+          </div>
+          <div class="hero__text">
+            Hello fellow shoppers! We're currently building our new fashion
+            store. Add your email below to stay up-to-date with announcements
+            and our launch deals.
+          </div>
+        </div>
+        <div class="subscribe">
+          <input
+            placeholder="Email Address"
+            type="email"
+            name="email"
+            class="subscribe__email"
+            required
+          />
+          <img
+            src="images/icon-error.svg"
+            alt="error"
+            class="subscribe__error"
+          />
+          <a href="" class="subscribe__button button">
+            <img src="images/icon-arrow.svg" alt="arrow" />
+          </a>
+        </div>
+        <p class="errors">Please provide a valid email</p>
       </div>
-      <p class="errors">Please provide a valid email</p>
     </main>
   </body>
 </html>

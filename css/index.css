@@ -30,7 +30,8 @@
 
 body {
   max-width: 1400px;
-  margin: 0;
+  width: 80%;
+  margin: 0 auto;
 
   font-size: 1rem;
   font-family: "Josefin Sans", sans-serif;
@@ -89,6 +90,7 @@ body {
 
 /*
  * subscribe
+ *  - use position;
  */
 
 .subscribe {
@@ -97,20 +99,30 @@ body {
   border: 1px solid;
   margin: 0 auto;
   width: 70%;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+
+  position: relative;
 }
 
 .subscribe__email {
   border: none;
   outline: none;
-  border-radius: 99rem;
   margin: 0 auto;
   padding: 0.7rem;
-  width: 50%;
+  border-radius: 99rem;
+  width: 80%;
 
   color: var(--desaturated-red);
+}
+
+.subscribe__error {
+  position: absolute;
+  right: 5rem;
+
+  transform: translateY(6px);
+}
+
+.subscribe__button > img {
+  vertical-align: middle;
 }
 
 /*
@@ -122,12 +134,17 @@ body {
   border-radius: 99rem;
   background-color: var(--desaturated-red);
   color: white;
-  padding: 0.7rem 2rem;
+  padding: 0.6rem 2rem;
+
+  position: absolute;
+  right: 0;
 }
 
 .button:hover {
   background-color: var(--desaturated-red-active);
   box-shadow: 1px 5px 10px 2px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  transform: scale(1.1);
 }
 
 /*
@@ -139,4 +156,47 @@ body {
   color: var(--desaturated-red);
   width: 70%;
   font-size: 1rem;
+}
+
+@media (min-width: 400px) {
+  main {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .hero__image {
+    background: no-repeat url(../images/hero-desktop.jpg);
+    height: 800px;
+    width: 610px;
+  }
+  .hero__header {
+    text-transform: uppercase;
+    font-size: 3.75rem;
+    margin: 0;
+    max-width: 10ch;
+  }
+
+  .hero {
+    text-align: left;
+  }
+
+  .hero__text {
+    max-width: 40ch;
+    margin-bottom: 2rem;
+  }
+
+  .subscribe {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hero__header {
+    line-height: 1;
+  }
 }
