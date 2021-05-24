@@ -15,10 +15,24 @@
   );
 }
 
+html {
+  box-sizing: border-box;
+}
+
+/*
+ * 1. Gradients
+ * 2. Code Structure
+ * 3. Email component alignment
+ * 4. Email component on
+ *     a) focus
+ *     b) error
+ *
+ */
+
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 body {
@@ -63,7 +77,7 @@ body {
 
 .hero__image {
   background: no-repeat url(../images/hero-mobile.jpg);
-  width: 380px;
+  width: 375px;
   height: 250px;
 }
 
