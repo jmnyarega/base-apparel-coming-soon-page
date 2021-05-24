@@ -19,12 +19,15 @@
   </head>
   <body>
     <main>
+      <div class="logo show-mobile">
+        <img src="images/logo.svg" alt="logo" />
+      </div>
       <div class="top-section">
         <div class="hero__image"></div>
       </div>
 
       <div class="content-section">
-        <div class="logo">
+        <div class="logo hide-mobile">
           <img src="images/logo.svg" alt="logo" />
         </div>
         <div class="hero__header">
@@ -37,24 +40,28 @@
           launch deals.
         </div>
         <div class="subscribe">
-          <input
-            placeholder="Email Address"
-            type="email"
-            name="email"
-            class="subscribe__email"
-            required
-          />
-          <img
-            src="images/icon-error.svg"
-            alt="error"
-            class="subscribe__error"
-          />
-          <a href="" class="subscribe__button button">
-            <img src="images/icon-arrow.svg" alt="arrow" />
-          </a>
+          <form onsubmit="return submit()" action="#">
+            <input
+              placeholder="Email Address"
+              type="email"
+              name="email"
+              id="email"
+              class="subscribe__email"
+            />
+            <img
+              src="images/icon-error.svg"
+              alt="error"
+              class="subscribe__error"
+              id="error"
+            />
+            <button class="subscribe__button button" id="buttonform">
+              <img src="images/icon-arrow.svg" alt="arrow" />
+            </button>
+          </form>
         </div>
-        <p class="errors">Please provide a valid email</p>
+        <p class="errors" id="error-msg">Please provide a valid email</p>
       </div>
     </main>
+    <script src="./js/index.js"></script>
   </body>
 </html>
