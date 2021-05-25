@@ -20,7 +20,6 @@ function clearErrors(error, errorMsg) {
 function validate(evt) {
   evt.preventDefault();
   const email = document.getElementById("email").value;
-  console.log(emailIsValid(email));
   !email.trim() || !emailIsValid(email)
     ? showErrors(error, errorMsg)
     : clearErrors(error, errorMsg);

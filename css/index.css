@@ -3,16 +3,6 @@
   --soft-red: hsl(0, 93%, 68%);
   --dark-grayish-red: hsl(0, 6%, 24%);
   --desaturated-red-active: hsla(0, 36%, 70%, 50%);
-  --gradient-1: linear-gradient(
-    135deg,
-    from hsl(0, 0%, 100%),
-    to hsl(0, 100%, 98%)
-  );
-  --gradient-2: linear-gradient(
-    135deg,
-    from hsl(0, 80%, 86%),
-    to hsl(0, 74%, 74%)
-  );
 }
 
 html {
@@ -20,12 +10,12 @@ html {
 }
 
 /*
- * 1. Gradients
+ * 1. Gradients ✅
  * 2. Code Structure
- * 3. Email component alignment
+ * 3. Email component alignment ☑️
  * 4. Email component on
- *     a) focus
- *     b) error
+ *     a) focus ☑️
+ *     b) error ☑️
  *
  */
 
@@ -33,19 +23,16 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+  margin: 0;
 }
 
 body {
   max-width: 1400px;
-  margin: 0;
 
   font-size: 1rem;
   font-family: "Josefin Sans", sans-serif;
-}
-
-.subscribe__error,
-.errors {
-  display: none;
+  background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%)),
+    linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
 }
 
 /*
@@ -108,9 +95,9 @@ body {
 .subscribe {
   border-radius: 99em;
   color: var(--desaturated-red);
-  border: 1px solid;
+  border: 1px solid CurrentColor;
+  width: 88%;
   margin: 0 auto;
-  width: 90%;
 
   position: relative;
 }
@@ -118,16 +105,18 @@ body {
 .subscribe__email {
   border: none;
   outline: none;
-  margin: 0 auto;
   padding: 1rem;
-  border-radius: 99rem;
-  width: 80%;
-
-  color: var(--desaturated-red);
+  border-radius: 99rem 0 0 99rem;
+  width: 90%;
 }
 
 .subscribe__email::placeholder {
   color: var(--desaturated-red);
+}
+
+.subscribe:focus-within {
+  border-radius: 99rem;
+  border: 1px solid var(--soft-red);
 }
 
 .subscribe__error {
@@ -153,26 +142,33 @@ body {
   padding: 0.9rem 2rem;
 
   position: absolute;
+  top: -1px;
   right: 0;
   border: none;
   cursor: pointer;
 }
 
-.button:hover {
+.button:hover,
+.button:focus {
   background-color: var(--desaturated-red-active);
   box-shadow: 1px 5px 10px 2px rgba(0, 0, 0, 0.3);
   z-index: 2;
+  outline: none;
 }
 
 /*
  * Errors
  */
-
 .errors {
-  margin: 5px auto;
+  margin: 1rem 1.5rem;
   color: var(--desaturated-red);
   width: 70%;
   font-size: 1rem;
+}
+
+.subscribe__error,
+.errors {
+  display: none;
 }
 
 /*
